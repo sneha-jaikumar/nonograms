@@ -49,18 +49,30 @@ public class PuzzleLibrary {
             }));
 
     //test clue
-//    clues.add(
-//        new CluesImpl(
-//            new int[][] {
-//              new int[] {0, 1},
-//              new int[] {1, 1},
-//              new int[] {2, 0},
-//            },
-//            new int[][] {
-//              new int[] {0, 2},
-//              new int[] {1, 1},
-//              new int[] {0, 1},
-//            }));
+    clues.add(
+        new CluesImpl(
+            new int[][] {
+              new int[] {0, 1},
+              new int[] {0, 1},
+              new int[] {0, 2},
+            },
+            new int[][] {
+              new int[] {0, 2},
+              new int[] {1, 1},
+            }));
+
+      clues.add(
+              new CluesImpl(
+                      new int[][] {
+                              new int[] {0, 1},
+                              new int[] {1, 1},
+                              new int[] {2, 0},
+                      },
+                      new int[][] {
+                              new int[] {0, 2},
+                              new int[] {1, 1},
+                              new int[] {0, 1},
+                      }));
 
       clues.add(
               new CluesImpl(

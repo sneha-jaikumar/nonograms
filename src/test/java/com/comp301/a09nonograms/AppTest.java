@@ -28,24 +28,34 @@ public class AppTest {
   public void test2() {
     List<Clues> clues = PuzzleLibrary.create();
     Model model1 = new ModelImpl(clues);
-    model1.setPuzzleIndex(0);
-    assertEquals(0, model1.getPuzzleIndex());
-    assertEquals(5, model1.getPuzzleCount());
+    model1.setPuzzleIndex(1);
+    assertEquals(1, model1.getPuzzleIndex());
+    assertEquals(7, model1.getPuzzleCount());
     assertEquals(2, model1.getRowCluesLength());
-    assertEquals(8, model1.getWidth());
-    model1.toggleCellShaded(1,1);
-    model1.toggleCellShaded(0,2);
-    model1.toggleCellShaded(0, 4);
-    model1.toggleCellShaded(1, 0);
-    model1.toggleCellShaded(1, 2);
-    model1.toggleCellShaded(1, 3);
-    model1.toggleCellShaded(1,4);
-    model1.toggleCellShaded(2,3);
-    model1.toggleCellShaded(2,4);
-    model1.toggleCellShaded(3,0);
-    model1.toggleCellShaded(3,1);
-    model1.toggleCellShaded(4,0);
-    model1.toggleCellShaded(4,1);
-    //assertTrue(model1.isSolved());
+    assertEquals(2, model1.getWidth());
+    model1.toggleCellEliminated(0,0);
+    model1.toggleCellEliminated(0,1);
+    model1.toggleCellEliminated(1, 0);
+    model1.toggleCellEliminated(1, 1);
+    model1.toggleCellEliminated(2,0);
+    model1.toggleCellEliminated(2,1);
+    assertTrue(model1.isSolved());
+  }
+
+  @Test
+  public void test3() {
+    List<Clues> clues = PuzzleLibrary.create();
+    Model model1 = new ModelImpl(clues);
+    model1.setPuzzleIndex(2);
+    assertEquals(2, model1.getPuzzleIndex());
+    assertEquals(7, model1.getPuzzleCount());
+    assertEquals(2, model1.getRowCluesLength());
+    assertEquals(3, model1.getWidth());
+    model1.toggleCellShaded(0,1);
+    //model1.toggleCellShaded(1,0);
+    //model1.toggleCellShaded(1, 2);
+    //model1.toggleCellShaded(2, 0);
+    model1.toggleCellShaded(2,1);
+    assertFalse(model1.isSolved());
   }
 }
