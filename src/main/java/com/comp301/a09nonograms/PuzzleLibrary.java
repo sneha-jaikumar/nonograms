@@ -48,22 +48,36 @@ public class PuzzleLibrary {
               new int[] {0, 0},
             }));
 
-    clues.add(
-        new CluesImpl(
-            new int[][] {
-              new int[] {1, 1, 1},
-              new int[] {0, 1, 3},
-              new int[] {0, 0, 2},
-              new int[] {0, 0, 2},
-              new int[] {0, 0, 2},
-            },
-            new int[][] {
-              new int[] {2, 2},
-              new int[] {0, 2},
-              new int[] {0, 2},
-              new int[] {0, 2},
-              new int[] {0, 3},
-            }));
+    //test clue
+//    clues.add(
+//        new CluesImpl(
+//            new int[][] {
+//              new int[] {0, 1},
+//              new int[] {1, 1},
+//              new int[] {2, 0},
+//            },
+//            new int[][] {
+//              new int[] {0, 2},
+//              new int[] {1, 1},
+//              new int[] {0, 1},
+//            }));
+
+      clues.add(
+              new CluesImpl(
+                      new int[][] {
+                              new int[] {1, 1, 1},
+                              new int[] {0, 1, 3},
+                              new int[] {0, 0, 2},
+                              new int[] {0, 0, 2},
+                              new int[] {0, 0, 2},
+                      },
+                      new int[][] {
+                              new int[] {2, 2},
+                              new int[] {0, 2},
+                              new int[] {0, 2},
+                              new int[] {0, 2},
+                              new int[] {0, 3},
+                      }));
 
     clues.add(
         new CluesImpl(
