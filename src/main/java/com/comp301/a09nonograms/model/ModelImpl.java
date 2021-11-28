@@ -4,7 +4,6 @@ import com.comp301.a09nonograms.Puzzle;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 public class ModelImpl implements Model {
   private List<Puzzle> availablePuzzles;
@@ -32,6 +31,7 @@ public class ModelImpl implements Model {
   public void setPuzzleIndex(int index) {
     // illegal argument exception?
     this.index = index;
+    notifyObservers();
   }
 
   public void addObserver(ModelObserver observer) {
@@ -40,12 +40,7 @@ public class ModelImpl implements Model {
 
   public void removeObserver(ModelObserver observer) {
     // what if it's not there?
-      if(!activeObservers.contains(observer)){
-          throw new NoSuchElementException();
-      }
-      else{
-          activeObservers.remove(observer);
-      }
+    activeObservers.remove(observer);
   }
 
   private void notifyObservers() {
