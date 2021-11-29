@@ -36,7 +36,7 @@ public class ControlsView implements FXComponent {
           controller.randPuzzle();
         });
 
-    Button clear = new Button("Clear");
+    Button clear = new Button("Reset");
     layout.getChildren().add(clear);
     clear.setOnAction(
         (ActionEvent event) -> {
