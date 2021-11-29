@@ -35,12 +35,12 @@ public class AppTest {
     assertEquals(7, model1.getPuzzleCount());
     assertEquals(2, model1.getRowCluesLength());
     assertEquals(2, model1.getWidth());
-    model1.toggleCellEliminated(0,0);
-    model1.toggleCellEliminated(0,1);
+    model1.toggleCellEliminated(0, 0);
+    model1.toggleCellEliminated(0, 1);
     model1.toggleCellEliminated(1, 0);
     model1.toggleCellEliminated(1, 1);
-    model1.toggleCellEliminated(2,0);
-    model1.toggleCellEliminated(2,1);
+    model1.toggleCellEliminated(2, 0);
+    model1.toggleCellEliminated(2, 1);
     assertTrue(model1.isSolved());
   }
 
@@ -53,14 +53,13 @@ public class AppTest {
     assertEquals(7, model1.getPuzzleCount());
     assertEquals(2, model1.getRowCluesLength());
     assertEquals(3, model1.getWidth());
-    model1.toggleCellShaded(0,1);
-    //model1.toggleCellShaded(1,0);
-    //model1.toggleCellShaded(1, 2);
-    //model1.toggleCellShaded(2, 0);
-    model1.toggleCellShaded(2,1);
+    model1.toggleCellShaded(0, 1);
+    // model1.toggleCellShaded(1,0);
+    // model1.toggleCellShaded(1, 2);
+    // model1.toggleCellShaded(2, 0);
+    model1.toggleCellShaded(2, 1);
     assertFalse(model1.isSolved());
   }
-
 
   @Test
   public void test4() {

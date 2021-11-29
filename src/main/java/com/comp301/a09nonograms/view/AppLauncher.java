@@ -10,7 +10,6 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import javax.swing.text.View;
 import java.util.List;
 
 public class AppLauncher extends Application {
@@ -28,14 +27,15 @@ public class AppLauncher extends Application {
     PuzzleView view = new PuzzleView(controller);
 
     // Make scene
-    Scene scene = new Scene(view.render(),600,600);
+    Scene scene = new Scene(view.render(), 600, 600);
     stage.setScene(scene);
 
     // Refresh view when model changes
-    model.addObserver((Model m) -> {
-      scene.setRoot(view.render());
-      stage.sizeToScene();
-    });
+    model.addObserver(
+        (Model m) -> {
+          scene.setRoot(view.render());
+          stage.sizeToScene();
+        });
 
     // Show the stage
     stage.setTitle("Puzzle View Example");
