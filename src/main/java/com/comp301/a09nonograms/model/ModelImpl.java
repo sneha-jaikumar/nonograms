@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ModelImpl implements Model {
   private List<Puzzle> availablePuzzles;
-    private List<Clues> givenClues;
+  private List<Clues> givenClues;
   private int index;
   private ArrayList<ModelObserver> activeObservers;
 
@@ -15,7 +15,6 @@ public class ModelImpl implements Model {
     availablePuzzles = new ArrayList<>();
     activeObservers = new ArrayList<>();
     givenClues = clues;
-    // initialize index
     for (Clues clue : clues) {
       availablePuzzles.add(new Puzzle(clue));
     }
