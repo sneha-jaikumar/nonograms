@@ -1,5 +1,7 @@
 package com.comp301.a09nonograms;
 
+import com.comp301.a09nonograms.controller.Controller;
+import com.comp301.a09nonograms.controller.ControllerImpl;
 import com.comp301.a09nonograms.model.Clues;
 import com.comp301.a09nonograms.model.Model;
 import com.comp301.a09nonograms.model.ModelImpl;
@@ -57,5 +59,16 @@ public class AppTest {
     //model1.toggleCellShaded(2, 0);
     model1.toggleCellShaded(2,1);
     assertFalse(model1.isSolved());
+  }
+
+
+  @Test
+  public void test4() {
+    List<Clues> clues = PuzzleLibrary.create();
+    Model model1 = new ModelImpl(clues);
+    model1.setPuzzleIndex(2);
+    model1.getRowClues(0);
+    Controller controller = new ControllerImpl(model1);
+    controller.getClues();
   }
 }

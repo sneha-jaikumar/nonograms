@@ -7,12 +7,14 @@ import java.util.List;
 
 public class ModelImpl implements Model {
   private List<Puzzle> availablePuzzles;
+    private List<Clues> givenClues;
   private int index;
   private ArrayList<ModelObserver> activeObservers;
 
   public ModelImpl(List<Clues> clues) {
     availablePuzzles = new ArrayList<>();
     activeObservers = new ArrayList<>();
+    givenClues = clues;
     // initialize index
     for (Clues clue : clues) {
       availablePuzzles.add(new Puzzle(clue));
@@ -87,12 +89,10 @@ public class ModelImpl implements Model {
         }
       }
       // check last cell
-      // if(tally != 0){
       if (tally != clue && clue != 0) {
         // notifyObservers();
         return false;
       }
-      // }
     }
 
     // checking if the row clues were done right for each row
@@ -130,26 +130,12 @@ public class ModelImpl implements Model {
         }
       }
       // check last cell
-      //            if(tally != 0){
       if (tally != clue && clue != 0) {
         // notifyObservers();
         return false;
       }
-      // }
     }
 
-    /*go to first column of puzzle. check if that column meet the clue for that column
-        so if clue is all 0's, check for NO shaded, so all either spaces or eliminated
-        if clue is of the 00x pattern, check for x shaded ones TOUCHING each other
-        if clue is of the 0xy pattern, check for x shaded ones TOUCHING, then at least ONE space,
-            then y shaded ones TOUCHING each other
-        if clue is of the xyz pattern, check for x shaded ones TOUCHING, then at least ONE space,
-            then y shaded ones TOUCHING each other, then at least ONE space, than z shaded ones TOUCHING each other
-        continue this however many times...
-    repeat this for each column
-    that do the same for each row
-     */
-    // notifyObservers();
     return true;
   }
 
