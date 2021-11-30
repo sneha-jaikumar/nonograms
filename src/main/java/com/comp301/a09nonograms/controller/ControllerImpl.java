@@ -66,7 +66,10 @@ public class ControllerImpl implements Controller {
   }
 
   public void randPuzzle() {
-    int newIndex = (int) Math.floor(Math.random() * ((model.getPuzzleCount() - 1) + 1));
+    int newIndex = model.getPuzzleIndex();
+    while(newIndex == model.getPuzzleIndex()){
+      newIndex = (int) Math.floor(Math.random() * ((model.getPuzzleCount() - 1) + 1));
+    }
     model.setPuzzleIndex(newIndex);
   }
 
